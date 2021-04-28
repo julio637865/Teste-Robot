@@ -2,7 +2,7 @@
 Library         AppiumLibrary
 
 ***Test Cases***
-Ver meu saldo
+Testes de Renegociação 
     Open Application 	http://localhost:4723/wd/hub
     ...                 automationName=UiAutomator2
     ...                 platformName=Android
@@ -10,14 +10,13 @@ Ver meu saldo
     ...                 app=C:\\Users\\Julio Santos\\TesteRobot\\app\\app-release.apk
 
 
-
-    Wait Until Element Is Visible   class=android.widget.TextView             10
+    Wait Until Element Is Visible   class=android.widget.TextView             20
 
     Click Element                   class=android.widget.TextView     
 
     Click Text                      text=COMEÇAR                                                                 #clico no botão começar 
 
-    Wait Until Element Is Visible   xpath=//android.widget.TextView[@content-desc="welcome-login-button"]   10   #aguarda o botão "acesse agora" estar presente na tela 
+    Wait Until Element Is Visible   xpath=//android.widget.TextView[@content-desc="welcome-login-button"]   20   #aguarda o botão "acesse agora" estar presente na tela 
 
     Click Element                   xpath=//android.widget.TextView[@content-desc="welcome-login-button"]        #clico em "acesse agora" 
 
@@ -39,8 +38,4 @@ Ver meu saldo
 
     Click Element                   xpath=//android.view.ViewGroup[@content-desc="two-factor-auth-send-to-email"]/android.widget.TextView        #clico em 'ENVIAR POR E-MAIL'
 
-    #Wait Until Element Is Visible   accessibility_id=phone-otp-code-input      15
-    #index=1
-    #index=2
-    #index=3
-    #index=4
+    Close Application
