@@ -7,7 +7,7 @@ Ver meu saldo
     ...                 automationName=UiAutomator2
     ...                 platformName=Android
     ...                 deviceName=Teste
-    ...                 app=C:\\Users\\Julio Santos\\Teste_Banqi\\app\\app-release.apk
+    ...                 app=C:\\Users\\Julio Santos\\TesteRobot\\app\\app-release.apk
 
 
 
@@ -15,21 +15,32 @@ Ver meu saldo
 
     Click Element                   class=android.widget.TextView     
 
-    Click Text                      text=COMEÇAR        
-    
-    Wait Until Element Is Visible   xpath=//android.view.ViewGroup[@content-desc="welcome-create-account-button"]/android.widget.TextView
+    Click Text                      text=COMEÇAR                                                                 #clico no botão começar 
 
-    Click Text                      text=CRIAR CONTA BANQI 
+    Wait Until Element Is Visible   xpath=//android.widget.TextView[@content-desc="welcome-login-button"]   10   #aguarda o botão "acesse agora" estar presente na tela 
 
-    Wait Until Element Is Visible   class=android.widget.EditText             10
+    Click Element                   xpath=//android.widget.TextView[@content-desc="welcome-login-button"]        #clico em "acesse agora" 
 
-    Input Text                      class=android.widget.EditText             Julio
+    Wait Until Element Is Visible   accessibility_id=login-cpf-input         20                                  #aguarda campo "CPF" estar visivel na tela   
 
-    Click Element                   xpath=//android.view.ViewGroup[@content-desc="first-name-continue-button"]/android.widget.TextView 
+    Input Value                     accessibility_id=login-cpf-input         26017798456                         #preencho o CPF 
 
-    Wait Until Element Is Visible   accessibility_id=cpf-input                10
+    Wait Until Element Is Visible   accessibility_id=login-password-input    20                                  #aguardo campo 'Senha' estar presente 
 
-    Input Text                      accessibility_id=cpf-input                  57013476056   
+    Input Value                     accessibility_id=login-password-input    Airf0xxx                            #preencho senha 
 
-    
+    Click Element                   xpath=//android.view.ViewGroup[@content-desc="login-confirm-button"]         #Clico em Entrar
 
+    Wait Until Element Is Visible   accessibility_id=two-factor-auth-unverified-device-button-verify-device  20  #Aguardo o botão 'VERIFICAR APARELHO' estar visivel na tela 
+
+    Click Element                   accessibility_id=two-factor-auth-unverified-device-button-verify-device      #clico em 'VERIFICAR APARELHO'
+
+    Wait Until Element Is Visible   xpath=//android.view.ViewGroup[@content-desc="two-factor-auth-send-to-email"]/android.widget.TextView  20    #Aguardo o botão 'ENVIAR POR E-MAIL'
+
+    Click Element                   xpath=//android.view.ViewGroup[@content-desc="two-factor-auth-send-to-email"]/android.widget.TextView        #clico em 'ENVIAR POR E-MAIL'
+
+    #Wait Until Element Is Visible   accessibility_id=phone-otp-code-input      15
+    #index=1
+    #index=2
+    #index=3
+    #index=4
